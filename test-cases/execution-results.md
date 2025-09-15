@@ -69,6 +69,7 @@ Body 탭 → raw → JSON 선택
 TC-004 (POST 정상 케이스)
 응답: 201 Created
 응답 본문: 새 게시글 JSON (id 포함)
+
 ----
 
 #### 🔹 TC-005: POST /posts (필수 필드 누락)
