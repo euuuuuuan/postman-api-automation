@@ -19,14 +19,16 @@
 ### TC-004 실행결과
 - 실행일시: 2025-09-16
 - 상태코드: 200
-- 응답시간: 139ms
-- 특이사항: 
+- 응답시간: 124ms
+- 특이사항:
+- <img src="https://github.com/user-attachments/assets/3b464355-7176-4c42-b2ff-7840c8872ea6" width="300px" alt="result4" />
 
 ### TC-005 실행결과
 - 실행일시: 2025-09-16
 - 상태코드: 200
-- 응답시간: 142ms
+- 응답시간: 43ms
 - 특이사항:
+- <img width="300" alt="result5" src="https://github.com/user-attachments/assets/dacd576e-02ff-45d8-9d27-fd6322866b9d" />
 
 
 ---
