@@ -111,6 +111,7 @@ pip install -r requirements.txt
 python python-tests/test_api_standalone.py
 pytest python-tests/test_api_standalone.py -v
 ```
+
 🧪 테스트 실행
 마커별 테스트 실행
 
@@ -136,7 +137,9 @@ pytest python-tests/test_api_standalone.py \
   --html=reports/test-report.html \
   --self-contained-html -v
 ```
+
 🎯 테스트 전략
+
 테스트 피라미드
 ```
         🔺 E2E (성능 테스트)
@@ -176,6 +179,7 @@ graph LR
 ```
 
 💼 실무 적용 가능성
+
 ✅ REST API 테스트 자동화 (범용 적용 가능)
 
 ✅ CI/CD 파이프라인 구축 (GitHub/GitLab 호환)
@@ -192,6 +196,7 @@ start demo.html
 ```
 
 🏆 핵심 차별화 포인트
+
 실무 중심 설계 – 독립 실행 가능, 면접 시연 최적화
 
 완성도 높은 자동화 – 한 번의 명령어로 전체 실행
@@ -199,6 +204,7 @@ start demo.html
 DevOps 문화 적용 – CI/CD 품질 게이트 통합
 
 🚀 향후 발전 계획
+
  GraphQL API 테스트 추가
 
  인증/인가 테스트 구현
@@ -213,6 +219,7 @@ DevOps 문화 적용 – CI/CD 품질 게이트 통합
 | 이름   | 역할               | 연락처                                                                 |
 | :----- | :----------------- | :--------------------------------------------------------------------- |
 | 전유안 | QA 자동화 엔지니어 | GitHub: [euuuuuuan](https://github.com/euuuuuuan)
+
 
 
 
