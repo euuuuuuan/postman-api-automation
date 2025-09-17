@@ -1,4 +1,4 @@
-🧪 QA API Testing Portfolio
+# 🧪 QA API Testing Portfolio
 Show Image
 Show Image
 Show Image
@@ -7,10 +7,10 @@ Show Image
 E-commerce API에 대한 종합적인 QA 테스트 자동화 프로젝트
 실무에서 바로 활용할 수 있는 API 테스트 자동화 포트폴리오입니다.
 
-🎯 프로젝트 한줄 요약
+### 🎯 프로젝트 한줄 요약
 30개 이상의 자동화된 테스트 케이스와 CI/CD 파이프라인을 통해 REST API의 품질을 보증하는 종합 테스트 시스템
 
-📋 목차
+### 📋 목차
 
 주요 특징
 기술 스택
@@ -23,7 +23,7 @@ CI/CD 파이프라인
 실무 적용 가능성
 데모 영상
 
-✨ 주요 특징
+### ✨ 주요 특징
 
 ✅ 30+ 개의 자동화된 테스트 케이스 - 다양한 시나리오 커버
 ✅ 4단계 테스트 마커 - Smoke, Functional, Negative, Performance
@@ -33,7 +33,7 @@ CI/CD 파이프라인
 ✅ Postman 테스트 통합 - API 도구 이중화
 ✅ 성능 및 부하 테스트 - Locust 기반 성능 검증
 
-🛠️ 기술 스택
+### 🛠️ 기술 스택
 테스트 자동화
 Python 3.9+     │ 메인 테스트 언어
 pytest          │ 테스트 프레임워크  
@@ -51,7 +51,8 @@ HTTP Methods    │ GET, POST, PUT, DELETE
 Response Format │ JSON
 Endpoints       │ /posts, /posts/{id}, /posts?userId={id}
 
-📁 프로젝트 구조
+### 📁 프로젝트 구조
+```
 qa-api-postman/
 │
 ├── 📋 README.md                          # 프로젝트 문서
@@ -73,6 +74,8 @@ qa-api-postman/
     ├── test-report.html
     ├── junit.xml
     └── performance-results/
+```
+
 🚀 빠른 시작
 1. 리포지토리 클론
 bashgit clone https://github.com/YOUR-USERNAME/qa-api-postman.git
@@ -277,3 +280,4 @@ GitHub: https://github.com/
 
 
 </div>
+
