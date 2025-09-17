@@ -2,6 +2,7 @@
 독립 실행형 API 테스트 파일
 Import 문제 없이 바로 실행 가능
 """
+
 import json
 import time
 from datetime import datetime
@@ -25,11 +26,13 @@ class APITestClient:
     def __init__(self, base_url: str = BASE_URL):
         self.base_url = base_url
         self.session = requests.Session()
-        self.session.headers.update({
-            "Content-Type": "application/json",
-            "Accept": "application/json",
-            "User-Agent": "QA-API-Test-Suite/1.0"
-        })
+        self.session.headers.update(
+            {
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+                "User-Agent": "QA-API-Test-Suite/1.0",
+            }
+        )
         self.last_response = None
         self.response_history = []
 
@@ -44,15 +47,19 @@ class APITestClient:
             response.response_time = response_time
 
             self.last_response = response
-            self.response_history.append({
-                'method': method,
-                'url': url,
-                'status_code': response.status_code,
-                'response_time': response_time,
-                'timestamp': time.time()
-            })
+            self.response_history.append(
+                {
+                    "method": method,
+                    "url": url,
+                    "status_code": response.status_code,
+                    "response_time": response_time,
+                    "timestamp": time.time(),
+                }
+            )
 
-            print(f"🌐 {method} {endpoint} - {response.status_code} ({response_time:.2f}ms)")
+            print(
+                f"🌐 {method} {endpoint} - {response.status_code} ({response_time:.2f}ms)"
+            )
             return response
 
         except requests.exceptions.RequestException as e:
@@ -105,7 +112,7 @@ def valid_post_data():
     return {
         "title": f"Automated Test Post {timestamp}",
         "body": f"This is a test post created by automated testing at {datetime.now().isoformat()}",
-        "userId": VALID_USER_ID
+        "userId": VALID_USER_ID,
     }
 
 
@@ -114,7 +121,7 @@ def invalid_post_data():
     """무효한 게시글 데이터 (필수 필드 누락)"""
     return {
         "body": "Post without title field",
-        "userId": VALID_USER_ID
+        "userId": VALID_USER_ID,
         # title 필드 의도적으로 누락
     }
 
@@ -129,7 +136,7 @@ class TestAPIHealth:
         response = api_client.get_all_posts()
 
         assert response.status_code == 200
-        assert 'application/json' in response.headers.get('content-type', '')
+        assert "application/json" in response.headers.get("content-type", "")
         assert response.response_time < MAX_RESPONSE_TIME
 
         print(f"✅ API 연결 성공: {response.response_time:.2f}ms")
@@ -153,16 +160,16 @@ class TestGetPosts:
 
         # 첫 번째 게시글 구조 검증
         first_post = posts[0]
-        required_fields = ['id', 'title', 'body', 'userId']
+        required_fields = ["id", "title", "body", "userId"]
         for field in required_fields:
             assert field in first_post, f"Missing field: {field}"
             assert first_post[field] is not None, f"Field {field} is None"
 
         # 데이터 타입 검증
-        assert isinstance(first_post['id'], int)
-        assert isinstance(first_post['title'], str)
-        assert isinstance(first_post['body'], str)
-        assert isinstance(first_post['userId'], int)
+        assert isinstance(first_post["id"], int)
+        assert isinstance(first_post["title"], str)
+        assert isinstance(first_post["body"], str)
+        assert isinstance(first_post["userId"], int)
 
         print(f"✅ 전체 게시글 조회: {len(posts)}개 게시글")
 
@@ -175,18 +182,18 @@ class TestGetPosts:
 
         post = response.json()
         assert isinstance(post, dict)
-        assert post['id'] == VALID_POST_ID
+        assert post["id"] == VALID_POST_ID
 
         # 필수 필드 검증
-        required_fields = ['id', 'title', 'body', 'userId']
+        required_fields = ["id", "title", "body", "userId"]
         for field in required_fields:
             assert field in post
             assert post[field] is not None
 
         # 내용 검증
-        assert len(post['title'].strip()) > 0
-        assert len(post['body'].strip()) > 0
-        assert post['userId'] > 0
+        assert len(post["title"].strip()) > 0
+        assert len(post["body"].strip()) > 0
+        assert post["userId"] > 0
 
         print(f"✅ 게시글 조회 성공: ID {VALID_POST_ID}")
 
@@ -202,7 +209,9 @@ class TestGetPosts:
             post = response.json()
             assert isinstance(post, dict)
 
-        print(f"✅ 존재하지 않는 게시글 조회: ID {INVALID_POST_ID}, 상태: {response.status_code}")
+        print(
+            f"✅ 존재하지 않는 게시글 조회: ID {INVALID_POST_ID}, 상태: {response.status_code}"
+        )
 
     @pytest.mark.functional
     def test_get_posts_by_user(self, api_client):
@@ -217,7 +226,7 @@ class TestGetPosts:
 
         # 모든 게시글이 해당 사용자의 것인지 확인
         for post in user_posts:
-            assert post['userId'] == VALID_USER_ID
+            assert post["userId"] == VALID_USER_ID
 
         print(f"✅ 사용자 {VALID_USER_ID}의 게시글: {len(user_posts)}개")
 
@@ -234,14 +243,14 @@ class TestCreatePosts:
 
         created_post = response.json()
         assert isinstance(created_post, dict)
-        assert 'id' in created_post
-        assert isinstance(created_post['id'], int)
-        assert created_post['id'] > 0
+        assert "id" in created_post
+        assert isinstance(created_post["id"], int)
+        assert created_post["id"] > 0
 
         # 제출한 데이터와 비교
-        assert created_post['title'] == valid_post_data['title']
-        assert created_post['body'] == valid_post_data['body']
-        assert created_post['userId'] == valid_post_data['userId']
+        assert created_post["title"] == valid_post_data["title"]
+        assert created_post["body"] == valid_post_data["body"]
+        assert created_post["userId"] == valid_post_data["userId"]
 
         print(f"✅ 게시글 생성 성공: ID {created_post['id']}")
 
@@ -277,7 +286,7 @@ class TestUpdateDeletePosts:
             "id": VALID_POST_ID,
             "title": f"Updated Title {int(time.time())}",
             "body": "Updated content by automated test",
-            "userId": VALID_USER_ID
+            "userId": VALID_USER_ID,
         }
 
         response = api_client.update_post(VALID_POST_ID, update_data)
@@ -285,9 +294,9 @@ class TestUpdateDeletePosts:
         assert response.status_code == 200
 
         updated_post = response.json()
-        assert updated_post['id'] == VALID_POST_ID
-        assert updated_post['title'] == update_data['title']
-        assert updated_post['body'] == update_data['body']
+        assert updated_post["id"] == VALID_POST_ID
+        assert updated_post["title"] == update_data["title"]
+        assert updated_post["body"] == update_data["body"]
 
         print(f"✅ 게시글 업데이트 성공: ID {VALID_POST_ID}")
 
@@ -341,16 +350,15 @@ class TestPerformance:
         def make_request():
             try:
                 response = api_client.get_post_by_id(1)
-                results.put({
-                    'success': True,
-                    'status_code': response.status_code,
-                    'response_time': response.response_time
-                })
+                results.put(
+                    {
+                        "success": True,
+                        "status_code": response.status_code,
+                        "response_time": response.response_time,
+                    }
+                )
             except Exception as e:
-                results.put({
-                    'success': False,
-                    'error': str(e)
-                })
+                results.put({"success": False, "error": str(e)})
 
         # 5개의 동시 요청
         threads = []
@@ -369,14 +377,16 @@ class TestPerformance:
 
         while not results.empty():
             result = results.get()
-            if result['success']:
+            if result["success"]:
                 successful_requests += 1
-                response_times.append(result['response_time'])
+                response_times.append(result["response_time"])
 
         print(f"\n🚀 동시 요청 테스트:")
         print(f"   성공한 요청: {successful_requests}/5")
         if response_times:
-            print(f"   평균 응답 시간: {sum(response_times) / len(response_times):.2f}ms")
+            print(
+                f"   평균 응답 시간: {sum(response_times) / len(response_times):.2f}ms"
+            )
 
         assert successful_requests >= 4, "동시 요청 중 너무 많은 실패"
 
@@ -400,7 +410,7 @@ if __name__ == "__main__":
         test_data = {
             "title": "Direct Test Post",
             "body": "This is a direct test",
-            "userId": 1
+            "userId": 1,
         }
         response = client.create_post(test_data)
         print(f"✅ 게시글 생성 테스트 통과: {response.status_code}")

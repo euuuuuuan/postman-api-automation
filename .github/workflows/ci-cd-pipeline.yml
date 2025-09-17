@@ -11,6 +11,10 @@ on:
   workflow_dispatch:
     # 수동 실행 가능
 
+permissions:
+  contents: read
+  security-events: write
+
 jobs:
   # 코드 품질 검사
   lint-and-format:
