@@ -108,7 +108,7 @@ jobs:
           --json-report --json-report-file=python-tests/reports/report.json
 
     - name: Upload test results
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       if: always()
       with:
         name: test-results-python${{ matrix.python-version }}
@@ -154,7 +154,7 @@ jobs:
         fi
 
     - name: Upload Postman test results
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       if: always()
       with:
         name: postman-test-results
@@ -218,7 +218,7 @@ jobs:
           --csv performance-tests/reports/load-test
 
     - name: Upload performance test results
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       if: always()
       with:
         name: performance-test-results
