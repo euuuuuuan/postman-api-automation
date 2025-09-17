@@ -2,12 +2,13 @@
 독립 실행형 API 테스트 파일
 Import 문제 없이 바로 실행 가능
 """
-import pytest
-import requests
 import json
 import time
-from typing import Dict, Any, List
 from datetime import datetime
+from typing import Any, Dict, List
+
+import pytest
+import requests
 
 # 설정 상수들
 BASE_URL = "https://jsonplaceholder.typicode.com"
@@ -332,8 +333,8 @@ class TestPerformance:
     @pytest.mark.performance
     def test_concurrent_requests_simulation(self, api_client):
         """동시 요청 시뮬레이션"""
-        import threading
         import queue
+        import threading
 
         results = queue.Queue()
 

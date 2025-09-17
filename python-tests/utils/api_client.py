@@ -1,13 +1,14 @@
 """
 API 클라이언트 유틸리티 클래스
 """
-import requests
 import json
+import logging
 import time
-from typing import Dict, Any, Optional, List
+from typing import Any, Dict, List, Optional
+
+import requests
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
-import logging
 
 # 로거 설정
 logger = logging.getLogger(__name__)

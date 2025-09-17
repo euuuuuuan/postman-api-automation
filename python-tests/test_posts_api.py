@@ -2,13 +2,14 @@
 Posts API 테스트 모듈
 JSONPlaceholder API를 사용한 종합적인 API 테스트
 """
+import json
+import os
+import sys
+import time
+from typing import Any, Dict, List
+
 import pytest
 import requests
-import json
-import sys
-import os
-from typing import Dict, List, Any
-import time
 
 # 프로젝트 루트 경로를 Python path에 추가
 current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -17,8 +18,9 @@ sys.path.insert(0, project_root)
 
 # Import 시도 (conftest.py에서 이미 정의되었을 것임)
 try:
-    from config.config import TestConfig
     from python_tests.utils.api_client import APIClient
+
+    from config.config import TestConfig
 except ImportError:
     # conftest.py에서 정의된 클래스들을 사용
     # pytest가 자동으로 conftest.py를 로드하므로 여기서는 pass

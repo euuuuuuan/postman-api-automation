@@ -1,13 +1,14 @@
 """
 pytest 설정 및 공통 픽스처
 """
-import pytest
-import requests
+import json
 import os
 import sys
-from typing import Generator
-import json
 from datetime import datetime
+from typing import Generator
+
+import pytest
+import requests
 
 # 프로젝트 루트 경로 추가 (여러 방법으로 시도)
 current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -15,8 +16,9 @@ project_root = os.path.dirname(current_dir)
 sys.path.insert(0, project_root)
 
 try:
-    from config.config import TestConfig
     from python_tests.utils.api_client import APIClient
+
+    from config.config import TestConfig
 except ImportError:
     # 대안 import 경로 시도
     try:
@@ -24,8 +26,9 @@ except ImportError:
         sys.path.append(os.path.join(project_root, 'python-tests', 'utils'))
         sys.path.append(os.path.join(project_root, 'config'))
 
-        from config import TestConfig
         from api_client import APIClient
+
+        from config import TestConfig
     except ImportError as e:
         # 최후의 수단: 직접 정의
         print(f"Import 오류로 인해 기본 설정 사용: {e}")
@@ -52,8 +55,9 @@ except ImportError:
                 return cls.JSONPLACEHOLDER_API
 
         # 간단한 API 클라이언트 정의
-        import requests
         import time
+
+        import requests
 
         class APIClient:
             def __init__(self, config):

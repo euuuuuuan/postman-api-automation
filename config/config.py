@@ -3,7 +3,7 @@ API 테스트 환경 설정
 """
 import os
 from dataclasses import dataclass
-from typing import Dict, Any
+from typing import Any, Dict
 
 
 @dataclass
