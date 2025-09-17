@@ -6,7 +6,7 @@
 - [![pytest](https://img.shields.io/badge/pytest-7.0%2B-green.svg)](https://pytest.org)
 
 > **E-commerce API에 대한 종합적인 QA 테스트 자동화 프로젝트**  
-> 실무에서 바로 활용할 수 있는 API 테스트 자동화 포트폴리오입니다.
+> 실무에서 바로 활용할 수 있는 API 테스트 자동화를 경험하고자 만든 프로젝트입니다.
 
 ---
 
@@ -289,6 +289,7 @@ DevOps 문화 적용 – CI/CD 품질 게이트 통합
 | 이름   | 역할               | 연락처                                                                 |
 | :----- | :----------------- | :--------------------------------------------------------------------- |
 | 전유안 | QA 자동화 엔지니어 | GitHub: [euuuuuuan](https://github.com/euuuuuuan)
+
 
 
 
