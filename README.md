@@ -37,6 +37,7 @@
 ## 🛠️ 기술 스택
 
 ### 테스트 자동화
+```
 Python 3.9+ │ 메인 테스트 언어
 pytest │ 테스트 프레임워크
 requests │ HTTP 클라이언트
@@ -56,6 +57,7 @@ JSONPlaceholder │ REST API (https://jsonplaceholder.typicode.com)
 HTTP Methods │ GET, POST, PUT, DELETE
 Response Format │ JSON
 Endpoints │ /posts, /posts/{id}, /posts?userId={id}
+```
 
 
 ---
@@ -214,6 +216,7 @@ DevOps 문화 적용 – CI/CD 품질 게이트 통합
 | 이름   | 역할               | 연락처                                                                 |
 | :----- | :----------------- | :--------------------------------------------------------------------- |
 | 전유안 | QA 자동화 엔지니어 | GitHub: [euuuuuuan](https://github.com/euuuuuuan)
+
 
 
 
