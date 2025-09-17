@@ -48,8 +48,6 @@ requests │ HTTP 클라이언트
 Postman/Newman │ API 테스트 도구
 Locust │ 성능 테스트
 
-shell
-Copy code
 
 ### DevOps & CI/CD
 GitHub Actions │ CI/CD 파이프라인
@@ -57,8 +55,6 @@ GitHub Pages │ 리포트 자동 배포
 Trivy │ 보안 취약점 스캔
 pytest-html │ HTML 리포팅
 
-shell
-Copy code
 
 ### 테스트 대상 API
 JSONPlaceholder │ REST API (https://jsonplaceholder.typicode.com)
@@ -66,8 +62,6 @@ HTTP Methods │ GET, POST, PUT, DELETE
 Response Format │ JSON
 Endpoints │ /posts, /posts/{id}, /posts?userId={id}
 
-yaml
-Copy code
 
 ---
 
@@ -101,7 +95,7 @@ qa-api-postman/
 ## 🚀 빠른 시작
 
 ### 1. 리포지토리 클론
-```b
+```
 git clone https://github.com/YOUR-USERNAME/qa-api-postman.git
 cd qa-api-postman
 ```
@@ -219,6 +213,7 @@ DevOps 문화 적용 – CI/CD 품질 게이트 통합
 | 이름   | 역할               | 연락처                                                                 |
 | :----- | :----------------- | :--------------------------------------------------------------------- |
 | 전유안 | QA 자동화 엔지니어 | GitHub: [euuuuuuan](https://github.com/euuuuuuan)
+
 
 
 
