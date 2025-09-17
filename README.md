@@ -43,16 +43,18 @@ pytest │ 테스트 프레임워크
 requests │ HTTP 클라이언트
 Postman/Newman │ API 테스트 도구
 Locust │ 성능 테스트
-
+```
 
 ### DevOps & CI/CD
+```
 GitHub Actions │ CI/CD 파이프라인
 GitHub Pages │ 리포트 자동 배포
 Trivy │ 보안 취약점 스캔
 pytest-html │ HTML 리포팅
-
+```
 
 ### 테스트 대상 API
+```
 JSONPlaceholder │ REST API (https://jsonplaceholder.typicode.com)
 HTTP Methods │ GET, POST, PUT, DELETE
 Response Format │ JSON
@@ -216,6 +218,7 @@ DevOps 문화 적용 – CI/CD 품질 게이트 통합
 | 이름   | 역할               | 연락처                                                                 |
 | :----- | :----------------- | :--------------------------------------------------------------------- |
 | 전유안 | QA 자동화 엔지니어 | GitHub: [euuuuuuan](https://github.com/euuuuuuan)
+
 
 
 
