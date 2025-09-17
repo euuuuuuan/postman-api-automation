@@ -73,6 +73,7 @@ Copy code
 ---
 
 ## 📁 프로젝트 구조
+```
 qa-api-postman/
 │
 ├── 📋 README.md
@@ -94,9 +95,7 @@ qa-api-postman/
 ├── test-report.html
 ├── junit.xml
 └── performance-results/
-
-yaml
-Copy code
+```
 
 ---
 
@@ -221,3 +220,4 @@ DevOps 문화 적용 – CI/CD 품질 게이트 통합
 | 이름   | 역할               | 연락처                                                                 |
 | :----- | :----------------- | :--------------------------------------------------------------------- |
 | 전유안 | QA 자동화 엔지니어 | GitHub: [euuuuuuan](https://github.com/euuuuuuan)
+
